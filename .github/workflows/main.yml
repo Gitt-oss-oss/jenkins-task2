@@ -33,7 +33,4 @@ jobs:
       - name: Check Test Result
         run: 'if grep -q "Tests run: 1, Failures: 0, Errors: 0, Skipped: 0" /local/jenkinsHome/jobs/job/builds/1/log;  then exit 0; else exit 1; fi'
       - name: Final Step
-        env:
-          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-        run: |
-          gh repo edit $GITHUB_REPOSITORY --visibility private --accept-visibility-change-consequences
+        run: echo 'Success'
